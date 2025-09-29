@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="leftContent">
+            <h1>TODO App </h1>
+            <p>Organize Your Task</p>
+            <img src="data/image.png " width="100%" alt="">
+
+        </div>  
+        <!-- <div class="banner">
+                <img src="data/todo banner.png" alt="Banner" width="100%" height="500px">
+            </div> -->
+        <div class="toDo">
+            <div class="header">
+                <!-- <button> <img src="data/trash-light-full.svg" alt=""></button> -->
+                <button id="clearB"><i class="fa-solid fa-trash"> </i> Clear All</button>
+            </div>
+            <div class="inputSide">
+                <input type="text" name="" id="taskInput" placeholder="Enter your task">
+                <button id="addTask">Add task</button>
+            </div>
+            <div class="taskList" id="taskList">
+                <!-- <h2> Go to gym </h2>
+                <h2>Go to gym</h2> -->
+                <!-- <ul class="list"> -->
+                <!-- <div class="listItem">
+                    <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
+                </div>
+                <div class="listItem">
+                    <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
+                </div>
+                <div class="listItem">
+                    <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
+                </div>
+                <div class="listItem">
+                    <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
+                </div> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+    </div>
+    <script>
+            const addTask = document.querySelector("#addTask")
+            const taskInput= document.querySelector('#taskInput')
+            const clearB = document.querySelector("#clearB")
+            const array= [];
+            const taskList=document.querySelector("#taskList")
+            
+
+            
+            addTask.addEventListener("click", function(){
+
+                if (taskInput.value === "") {
+                 alert(
+                     "Please enter your task... "
+                 )}
+                 else{
+                     array.push(taskInput.value)
+                     const listItem= document.createElement("div")
+                     for (let i = 0; i < array.length; i++) {
+                         const element = array[i];
+                         
+                         listItem.textContent=element
+                         taskList.append(listItem)
+                         taskInput.value=""
+                        }
+                 }
+                
+             })
+
+                
+            // clearB.addEventListener("click", function(){
+            //     array = [];
+            //     console.log(array);
+                
+            // })
+    </script>
+</body>
+</html>
